@@ -63,12 +63,11 @@ sudo pacman -S --noconfirm \
   tmux \
   fzf \
   zoxide \
-  neofetch \
   bat \
   fd \
   ripgrep \
   eza \
-  neofetch \
+  fastfetch \
   kitty
 
 echo "[Shell] Installing oh-my-zsh..."
@@ -92,7 +91,6 @@ sudo pacman -S --noconfirm \
   waybar \
   rofi \
   fuzzel \
-  wlogout \
   wl-clipboard \
   grim \
   slurp
@@ -108,6 +106,11 @@ if ! command -v paru &> /dev/null; then
   cd -
 fi
 
+# wlogout
+if ! command -v wlogout &> /dev/null; then
+  paru -S --noconfirm wlogout
+fi
+
 echo "[Dotfiles] Creating symlinks with stow..."
 cd ~/dotfiles
 
@@ -116,7 +119,7 @@ cd ~/dotfiles
 # stow tmux
 # stow alacritty
 # stow hyprland
-#stow waybar
+# stow waybar
 
 echo "Arch setup completed successfully!"
 
