@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontSize": 14,
+    "window.commandCenter": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.fontFamily": "Source Code Pro",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "git.autofetch": true,
+    "terminal.integrated.inheritEnv": false
+}
