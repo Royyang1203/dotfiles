@@ -1,1 +1,5 @@
 .DS_Store
+
+# Commercial fonts: keep local only (see macos/fonts/README.md)
+macos/fonts/*.ttf
+macos/fonts/*.otf

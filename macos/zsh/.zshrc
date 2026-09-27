@@ -86,9 +86,11 @@ eval "$(fzf --zsh)"
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 eval "$(zoxide init --cmd z zsh)"
 
-# ----- nvm -----
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# ----- Optional toolchains (see scripts/optional/) -----
+for _p in /opt/riscv/bin "$HOME/.local/iverilog-12/bin"; do
+  [ -d "$_p" ] && PATH="$_p:$PATH"
+done
+unset _p
 
 # ----- OrbStack -----
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :

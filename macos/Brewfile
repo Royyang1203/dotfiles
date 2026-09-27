@@ -1,0 +1,96 @@
+# macOS packages. Install with:
+#   brew bundle --file=~/dotfiles/macos/Brewfile
+
+# ----- Shell -----
+brew "zsh"
+brew "tmux"
+brew "fzf"
+brew "zoxide"
+brew "eza"
+brew "bat"
+brew "fd"
+brew "ripgrep"
+brew "tree"
+brew "htop"
+brew "fastfetch"
+brew "neovim"
+
+# ----- Dev -----
+brew "git"
+brew "gh"
+brew "jq"
+brew "wget"
+brew "gcc"
+brew "cmake"
+brew "node"
+brew "uv"
+
+# ----- Files & media -----
+brew "unar"
+brew "poppler"
+brew "imagemagick"
+brew "graphviz"
+brew "ffmpeg"
+brew "yt-dlp"
+brew "rclone"
+
+# ----- Network & servers -----
+brew "iproute2mac"
+
+# ----- Fonts -----
+cask "font-meslo-lg-nerd-font"
+
+# ----- AI -----
+cask "claude"
+cask "claude-code"
+cask "chatgpt"
+cask "codex"
+cask "antigravity-cli"
+
+# ----- Terminal & editors -----
+cask "iterm2"
+cask "visual-studio-code"
+cask "orbstack"
+cask "termius"
+cask "gcloud-cli"
+
+# ----- Browsers -----
+cask "google-chrome"
+cask "firefox"
+
+# ----- macOS utilities -----
+cask "raycast"
+cask "rectangle"
+cask "alt-tab"
+cask "jordanbaird-ice"
+cask "betterdisplay"
+cask "scroll-reverser"
+cask "stats"
+cask "shottr"
+cask "appcleaner"
+cask "aldente"
+
+# ----- Notes & research -----
+cask "notion"
+cask "obsidian"
+cask "zotero"
+
+# ----- Chat -----
+cask "discord"
+cask "telegram"
+
+# ----- Office -----
+cask "microsoft-office"
+cask "libreoffice"
+
+# ----- Audio & video -----
+cask "background-music"
+cask "blackhole-2ch"
+cask "obs"
+cask "vlc"
+
+# ----- Remote & network -----
+cask "tailscale-app"
+cask "cloudflare-warp"
+cask "anydesk"
+cask "parsec"

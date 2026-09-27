@@ -1,0 +1,9 @@
+# Meeting apps (optional, not run by bootstrap.sh). Install with:
+#   brew bundle --file=~/dotfiles/macos/Brewfile.meetings
+#
+# Zoom, Teams and Webex can also join meetings from the browser.
+
+cask "zoom"
+cask "microsoft-teams"
+cask "webex"
+cask "tencent-meeting"

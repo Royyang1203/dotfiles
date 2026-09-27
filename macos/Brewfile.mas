@@ -1,0 +1,14 @@
+# App Store apps (optional, not run by bootstrap.sh). Install with:
+#   brew bundle --file=~/dotfiles/macos/Brewfile.mas
+#
+# Sign in to the App Store app first. `mas` cannot sign in for you.
+
+brew "mas"
+mas "Pages", id: 409201541
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Amphetamine", id: 937984704
+mas "LINE", id: 539883307
+mas "WeChat", id: 836500024
+mas "WireGuard", id: 1451685025
+mas "The Unarchiver", id: 425424353

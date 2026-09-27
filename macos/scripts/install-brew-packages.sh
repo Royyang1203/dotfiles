@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+brewfile="${script_dir}/../Brewfile"
+
 if [[ "$(uname -s)" != "Darwin" ]]; then
   echo "This installer is intended for macOS/Homebrew setups." >&2
   exit 1
@@ -45,27 +48,5 @@ activate_brew() {
 install_homebrew
 activate_brew
 
-packages=(
-  git
-  zsh
-  tmux
-  fzf
-  zoxide
-  eza
-  neovim
-  ripgrep
-  fd
-  bat
-  htop
-  tree
-  fastfetch
-)
-
-echo "Installing Homebrew packages: ${packages[*]}"
-brew install "${packages[@]}"
-
-casks=(
-  font-meslo-lg-nerd-font
-)
-echo "Installing Homebrew casks: ${casks[*]}"
-brew install --cask "${casks[@]}"
+echo "Installing packages from ${brewfile}"
+brew bundle --file="$brewfile"

@@ -25,7 +25,4 @@ log "Installing Homebrew packages"
 log "Setting up zsh"
 "${script_dir}/setup-zsh.sh"
 
-log "Installing dev tools (nvm/uv)"
-"${script_dir}/install-dev-tools.sh"
-
 log "Bootstrap complete"
