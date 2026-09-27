@@ -31,7 +31,7 @@ install_zinit() {
 
 install_zinit
 
-log "Configuring zsh via ZDOTDIR"
+log "Linking zsh config into ~/.config/zsh"
 repo_root="$(cd "${script_dir}/.." && pwd)"
 zsh_src="${repo_root}/zsh"
 
@@ -58,10 +58,14 @@ for file in .zshenv .zprofile .zshrc p10k.zsh; do
     echo "Source file missing: $src" >&2
     exit 1
   fi
-  if [ -f "$dest" ] || [ -L "$dest" ]; then
-    cp -a "$dest" "${dest}.bak.$(date +%Y%m%d-%H%M%S)"
+  # Symlink so edits on this machine land in the repo.
+  if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+    continue
   fi
-  cp "$src" "$dest"
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    mv "$dest" "${dest}.bak.$(date +%Y%m%d-%H%M%S)"
+  fi
+  ln -s "$src" "$dest"
 done
 
 # Wrapper files in ~ to ensure config loads even if ZDOTDIR is not
