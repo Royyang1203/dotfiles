@@ -2,6 +2,8 @@
 
 Personal setup for macOS, Ubuntu and Arch Linux. Most of the work is in `macos/`.
 
+Private files (SSH config, commercial fonts) are in the private repo `Royyang1203/dotfiles-private`, cloned to `~/dotfiles-private`.
+
 **This repo is public.** Never commit secrets or private data. See [Never commit](#never-commit).
 
 ## Layout
@@ -17,7 +19,7 @@ macos/
   tmux/                 .tmux.conf.local for oh-my-tmux (symlinked)
   claude/               Claude Code settings, output styles, own skills (symlinked)
   codex/                Codex rules and skills (symlinked), starting config.toml (copied)
-  fonts/                Fonts installed by hand. Font files are not in git.
+  fonts/                Notes on fonts. Font files live in dotfiles-private.
   scripts/
     bootstrap.sh            Runs the steps below, in order
     install-brew-packages.sh  Installs Homebrew, then `brew bundle` on Brewfile
@@ -90,11 +92,19 @@ git clone https://github.com/Royyang1203/dotfiles.git ~/dotfiles
 - [ ] Only if needed: `~/dotfiles/macos/scripts/optional/install-ca-toolchain.sh` (uses `sudo` for `/opt/riscv`).
 - [ ] Set the default browser in System Settings.
 
-**Files that are not in this repo**
+**Private files** (after `gh auth login`)
 
-- [ ] `Kaiu.ttf` (標楷體): copy from the old Mac. See `macos/fonts/README.md`.
-- [ ] `~/.ssh/config`: copy from the password manager or a private backup. It lists lab servers.
-- [ ] SSH keys: make a new key on each Mac. Add it to GitHub and to the servers.
+- [ ] Clone the private repo and run its setup. It links `~/.ssh/config` and installs `Kaiu.ttf` (標楷體). See its `CLAUDE.md`.
+
+  ```bash
+  gh repo clone Royyang1203/dotfiles-private ~/dotfiles-private
+  ```
+
+  ```bash
+  ~/dotfiles-private/setup.sh
+  ```
+
+- [ ] SSH keys: `~/.ssh/config` uses `~/.ssh/id_rsa`. Restore it from the password manager, or make a new key and update `IdentityFile`. Add the key to GitHub and to the servers.
 - [ ] WireGuard: import the `CGILab-1` to `CGILab-4` tunnels. Get them from the password manager or the lab admin.
 
 **System settings and permissions**
@@ -146,11 +156,11 @@ Open a new iTerm2 window, then check:
 This repo is public. These stay out of git:
 
 - API keys, tokens, passwords. For example `~/.codex/auth.json`, `~/.config/rclone/rclone.conf`.
-- SSH private keys and `~/.ssh/config`.
+- SSH private keys and `~/.ssh/config` (in `dotfiles-private`).
 - WireGuard and other VPN configs.
 - `~/.claude.json` (sign-in state and project history).
 - The live `~/.codex/config.toml` (private project paths).
-- Commercial fonts (`macos/fonts/*.ttf` and `*.otf` are in `.gitignore`).
+- Commercial fonts (in `dotfiles-private`; `macos/fonts/*.ttf` and `*.otf` are also in `.gitignore`).
 - VS Code settings: they contain lab server names. Settings Sync handles them.
 
 ## Known gaps

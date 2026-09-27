@@ -1,7 +1,5 @@
 # Fonts
 
-Fonts to install manually when setting up a new Mac.
-
 ## Kaiu.ttf — 標楷體 (DFKai-SB)
 
 | Item | Value |
@@ -12,20 +10,22 @@ Fonts to install manually when setting up a new Mac.
 
 **Why:** Many Taiwanese school and government documents (reports, grant proposals, theses, official forms) require 標楷體. macOS does not ship with it, so `.docx` files written on Windows fall back to a different font and the layout breaks.
 
-**Install:**
+**Where:** `Kaiu.ttf` is a commercial font by DynaComware, licensed with Microsoft Windows. This repo is public, so the file is in the private repo `Royyang1203/dotfiles-private`. Its `setup.sh` copies the font to `~/Library/Fonts`:
 
 ```bash
-cp ~/dotfiles/macos/fonts/Kaiu.ttf ~/Library/Fonts/
+gh repo clone Royyang1203/dotfiles-private ~/dotfiles-private
 ```
 
-Or double-click `Kaiu.ttf` and click **Install Font** in Font Book. Restart Word / PowerPoint afterwards.
+```bash
+~/dotfiles-private/setup.sh
+```
+
+Restart Word / PowerPoint afterwards.
 
 **Check:**
 
 ```bash
-fc-list | grep -i DFKai
+ls ~/Library/Fonts/Kaiu.ttf
 ```
 
-## Not in git
-
-`Kaiu.ttf` is a commercial font by DynaComware, licensed with Microsoft Windows. This repo is public, so the font file is listed in `.gitignore` and exists only on the local machine. A fresh `git clone` will not contain it — copy the file over from an existing Mac (`~/Library/Fonts/Kaiu.ttf` or this folder) or from a personal backup.
+`.gitignore` still blocks `macos/fonts/*.ttf` and `*.otf`, so a font file put here by mistake is not committed.
