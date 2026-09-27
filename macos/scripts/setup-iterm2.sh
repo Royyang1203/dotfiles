@@ -10,6 +10,12 @@ log() {
   printf '[iterm2] %s\n' "$*"
 }
 
+if [ "$(defaults read "$domain" PrefsCustomFolder 2>/dev/null)" = "$prefs_dir" ] &&
+  [ "$(defaults read "$domain" LoadPrefsFromCustomFolder 2>/dev/null)" = "1" ]; then
+  log "iTerm2 already loads settings from ${prefs_dir}"
+  exit 0
+fi
+
 if pgrep -xq iTerm2; then
   echo "Quit iTerm2 first. It overwrites its settings when it quits." >&2
   exit 1

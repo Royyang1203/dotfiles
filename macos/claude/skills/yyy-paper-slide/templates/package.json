@@ -1,0 +1,8 @@
+{
+  "name": "yyy-paper-slide-deck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": { "build": "node build.js" },
+  "dependencies": { "pptxgenjs": "^4.0.1" }
+}

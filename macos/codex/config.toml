@@ -1,0 +1,15 @@
+# Starting config for a new machine. setup-configs.sh copies it only when
+# ~/.codex/config.toml does not exist: Codex rewrites that file with trusted
+# project paths and plugin state, so it is not linked to this repo.
+personality = "pragmatic"
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
+sandbox_mode = "workspace-write"
+service_tier = "default"
+
+[features]
+multi_agent = true
+js_repl = false
+
+[sandbox_workspace_write]
+network_access = true

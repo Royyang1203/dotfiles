@@ -42,9 +42,7 @@ cask "font-meslo-lg-nerd-font"
 
 # ----- AI -----
 cask "claude"
-cask "claude-code"
 cask "chatgpt"
-cask "codex"
 cask "antigravity-cli"
 
 # ----- Terminal & editors -----

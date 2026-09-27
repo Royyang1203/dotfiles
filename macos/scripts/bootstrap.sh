@@ -28,4 +28,10 @@ log "Setting up zsh"
 log "Setting up iTerm2"
 "${script_dir}/setup-iterm2.sh"
 
+log "Installing AI tools (Claude Code, Codex)"
+"${script_dir}/install-ai-tools.sh"
+
+log "Linking app configs"
+"${script_dir}/setup-configs.sh"
+
 log "Bootstrap complete"
