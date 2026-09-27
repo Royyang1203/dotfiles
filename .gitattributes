@@ -1,0 +1,2 @@
+# iTerm2 writes a NUL byte (Ctrl+Space hotkey); still show text diffs.
+*.plist diff

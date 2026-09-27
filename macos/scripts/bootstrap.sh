@@ -25,4 +25,7 @@ log "Installing Homebrew packages"
 log "Setting up zsh"
 "${script_dir}/setup-zsh.sh"
 
+log "Setting up iTerm2"
+"${script_dir}/setup-iterm2.sh"
+
 log "Bootstrap complete"
